@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "translation-demo": {
+    "calendar-demo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/translation-demo",
+            "outputPath": "dist/calendar-demo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "translation-demo:build"
+            "browserTarget": "calendar-demo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "translation-demo:build:production"
+              "browserTarget": "calendar-demo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "translation-demo:build"
+            "browserTarget": "calendar-demo:build"
           }
         },
         "test": {
@@ -116,18 +116,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "translation-demo:serve"
+            "devServerTarget": "calendar-demo:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "translation-demo:serve:production"
+              "devServerTarget": "calendar-demo:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "translation-demo",
+  "defaultProject": "calendar-demo",
   "cli": {
     "analytics": "023f9b33-3b95-478d-8a02-c0beb00130be"
   }

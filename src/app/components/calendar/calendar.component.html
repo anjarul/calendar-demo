@@ -4,7 +4,7 @@
             (change)="onMonthChange()">
       <option *ngFor="let mon of months;" [ngValue]="mon.index">{{mon?.name}}</option>
     </select>
-    <button style="float: right" (click)="createPatient()"> Create</button>
+    <button style="float: right" (click)="createPatient()"> Create Appointment</button>
   </div>
   <span *ngFor='let weekDay of weekDaysName' class="day">
     {{ weekDay }}
