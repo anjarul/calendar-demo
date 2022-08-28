@@ -1,0 +1,60 @@
+<div class="p-4">
+  <form [formGroup]="appointmentForm">
+
+      <div class="form-group">
+        <input type="text" class="form-control" formControlName="firstName" placeholder="First Name">
+
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" formControlName="lastName" placeholder="Last Name">
+      </div>
+
+      <div class="form-group">
+        <input type="email" class="form-control" formControlName="email" placeholder="Email address">
+      </div>
+
+      <div class="form-group">
+        <mat-radio-group aria-label="Select an option" formControlName="gender" class="form-control">
+          <mat-radio-button style="padding-right: 10px" value="Male">Male</mat-radio-button>
+          <mat-radio-button value="Female">Female</mat-radio-button>
+        </mat-radio-group>
+
+      </div>
+
+      <div class="form-group">
+        <input type="number" class="form-control" formControlName="age" placeholder="Age">
+      </div>
+
+      <div class="form-group">
+        <mat-form-field appearance="fill" >
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="appointmentDate">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+      </div>
+
+    <div class="form-group">
+      <input type="time" class="form-control" formControlName="appointmentTime">
+
+    </div>
+
+<!--    <div>{{appointmentForm.value | json}}</div>-->
+
+
+  </form>
+
+
+  <div class="d-flex justify-content-center mt-5">
+    <button class="btn btn-primary mr-2" [disabled]="!appointmentForm.valid" (click)="onSubmit()">
+      <i class="fa fa-arrow-up"></i> Submit
+    </button>
+    <button class="btn btn-danger ml-2" (click)="onCancel()">
+      <i class="fa fa-times"></i> Cancel
+    </button>
+  </div>
+</div>
+
+

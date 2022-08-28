@@ -1,0 +1,20 @@
+<div class="calendar">
+  <div class="header">
+    <select class="form-control" aria-label="Default select example" [(ngModel)]="monthNumber"
+            (change)="onMonthChange()">
+      <option *ngFor="let mon of months;" [ngValue]="mon.index">{{mon?.name}}</option>
+    </select>
+    <button style="float: right" (click)="createPatient()"> Create</button>
+  </div>
+  <span *ngFor='let weekDay of weekDaysName' class="day">
+    {{ weekDay }}
+  </span>
+
+  <span *ngFor='let day of monthDays' class="day">
+    {{ day.number }}
+    <ul>
+      <li *ngFor="let app of day.appointmentList; let i = index"
+          (click)="showAppointmentDetails(app)">{{i + 1}}. {{app?.firstName}}</li>
+    </ul>
+  </span>
+</div>
