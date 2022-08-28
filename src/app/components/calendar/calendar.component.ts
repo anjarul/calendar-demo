@@ -30,7 +30,7 @@ export class CalendarComponent implements OnInit {
     this.router.navigate([`/${this.constant.getMonthByIndex(this.monthNumber)}/${this.monthNumber}`]);
     this.months = this.constant.getMonths();
     this.weekDaysName = this.constant.getWeekDays();
-    this.setMonthDays(this.calendarCreator.getCurrentMonth());
+    this.setMonthDays(this.calendarCreator.getMonth(this.monthNumber, this.year));
   }
 
   createPatient() {
